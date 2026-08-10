@@ -1,0 +1,29 @@
+name: AccessPath CI
+description: Replay critical user flows and detect new axe-core accessibility violations.
+author: AccessPath CI
+branding:
+  color: purple
+  icon: check-circle
+inputs:
+  flow:
+    description: Path to the AccessPath YAML flow definition.
+    required: false
+    default: accesspath.yml
+  baseline:
+    description: Path to the JSON baseline file.
+    required: false
+    default: .accesspath/baseline.json
+  update-baseline:
+    description: Write the current result as the new baseline.
+    required: false
+    default: "false"
+  output:
+    description: Directory for HTML, JSON, screenshots, traces, and evidence.
+    required: false
+    default: accesspath-results
+  token:
+    description: GitHub token used to upsert the evidence summary on pull requests.
+    required: false
+runs:
+  using: node20
+  main: dist/cli.js

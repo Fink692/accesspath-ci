@@ -1,0 +1,22 @@
+name: critical-checkout-flow
+baseUrl: http://127.0.0.1:4173
+viewport:
+  width: 1440
+  height: 900
+timeoutMs: 15000
+scan:
+  runAfterEveryStep: false
+steps:
+  - goto: /signup
+  - fill:
+      target: "#email"
+      value: "qa@example.com"
+  - tab: 2
+  - screenshot: signup-filled.png
+  - scan: signup-form
+  - click: "#continue"
+  - waitFor: "#checkout-heading"
+  - scan: checkout
+assertions:
+  - url: "/checkout"
+  - visible: "#checkout-heading"

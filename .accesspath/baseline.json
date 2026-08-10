@@ -1,0 +1,10 @@
+{
+  "formatVersion": 1,
+  "generatedAt": "2026-08-09T00:00:00.000Z",
+  "commit": "seeded-demo",
+  "flows": {
+    "critical-checkout-flow": {
+      "violations": {}
+    }
+  }
+}
